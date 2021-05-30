@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:EventVBM.ViewModels"
+             x:Class="EventVBM.Views.MenuPage">
+    <ContentPage.BindingContext>
+        <vm:MenuViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>        
+        <Grid BackgroundColor="White" Margin="0,10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <StackLayout Orientation="Vertical">
+                <SearchBar Placeholder="Tìm sản phẩm" TextColor="Black"/>
+                <CollectionView ItemsSource="{Binding danhMucs}"
+                                VerticalScrollBarVisibility="Never"
+                                HeightRequest="55" Margin="10,10"
+                                SelectionMode="Single"
+                                SelectionChanged="CollectionView_SelectionChanged">
+                    <CollectionView.ItemsLayout>
+                        <GridItemsLayout HorizontalItemSpacing="10" Orientation="Horizontal"/>
+                    </CollectionView.ItemsLayout>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Frame BorderColor="Yellow"
+                                   BackgroundColor="WhiteSmoke"
+                                   WidthRequest="70" CornerRadius="20">
+                                <Label Text="{Binding Name}" 
+                                       TextColor="Black" FontSize="14"
+                                       HorizontalOptions="CenterAndExpand"
+                                       VerticalOptions="CenterAndExpand"/>
+                            </Frame>                            
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+                <CollectionView x:Name="ChildButton"
+                                HeightRequest="54" Margin="10,0"
+                                SelectionMode="Single"
+                                SelectionChanged="ChildButton_SelectionChanged">
+                    <CollectionView.ItemsLayout>
+                        <GridItemsLayout HorizontalItemSpacing="10" Orientation="Horizontal"/>
+                    </CollectionView.ItemsLayout>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Frame BackgroundColor="WhiteSmoke"
+                                   WidthRequest="60" HasShadow="False"
+                                   CornerRadius="20">
+                                <Label Text="{Binding Name}" FontSize="12" TextColor="Black" 
+                                       HorizontalOptions="Center"
+                                       VerticalOptions="StartAndExpand"/>
+                            </Frame>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </StackLayout>
+            <CollectionView Grid.Row="1"
+                            x:Name="Collecitems"
+                            ItemsSource="{Binding Items}"
+                            VerticalScrollBarVisibility="Never"
+                            SelectionChanged="Collecitems_SelectionChanged"
+                            SelectionMode="Single" Margin="0,20"
+                            RemainingItemsThreshold="4"
+                            RemainingItemsThresholdReachedCommand="{Binding Lazyload}">
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout Orientation="Vertical" VerticalItemSpacing="20"/>
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout Orientation="Horizontal"
+                                     VerticalOptions="Center"
+                                     HorizontalOptions="Start">
+                            <Image Source="{Binding HinhAnh}" Aspect="AspectFit" HeightRequest="100" WidthRequest="200"/>
+                            <StackLayout HorizontalOptions="Start" VerticalOptions="Center">
+                                <Label Text="{Binding Ten_sp}" FontSize="14"/>
+                                <Label Text="{Binding NguyenGia,StringFormat='{0}đ'}" FontSize="13"/>
+                            </StackLayout>
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            <ActivityIndicator HorizontalOptions="Center"
+                               VerticalOptions="End"
+                               IsRunning="{Binding IsBusy}"
+                               Color="Yellow"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

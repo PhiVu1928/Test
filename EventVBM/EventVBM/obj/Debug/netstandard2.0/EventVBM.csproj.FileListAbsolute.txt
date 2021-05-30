@@ -1,0 +1,14 @@
+C:\Users\Phi Vu\Desktop\VBM\EventVBM\EventVBM\EventVBM\obj\Debug\netstandard2.0\App.xaml.g.cs
+C:\Users\Phi Vu\Desktop\VBM\EventVBM\EventVBM\EventVBM\obj\Debug\netstandard2.0\AppShell.xaml.g.cs
+C:\Users\Phi Vu\Desktop\VBM\EventVBM\EventVBM\EventVBM\obj\Debug\netstandard2.0\EventVBM.AssemblyInfoInputs.cache
+C:\Users\Phi Vu\Desktop\VBM\EventVBM\EventVBM\EventVBM\obj\Debug\netstandard2.0\EventVBM.AssemblyInfo.cs
+C:\Users\Phi Vu\Desktop\VBM\EventVBM\EventVBM\EventVBM\obj\Debug\netstandard2.0\EventVBM.csproj.CoreCompileInputs.cache
+C:\Users\Phi Vu\Desktop\VBM\EventVBM\EventVBM\EventVBM\obj\Debug\netstandard2.0\EventVBM.dll
+C:\Users\Phi Vu\Desktop\VBM\EventVBM\EventVBM\EventVBM\obj\Debug\netstandard2.0\ref\EventVBM.dll
+C:\Users\Phi Vu\Desktop\VBM\EventVBM\EventVBM\EventVBM\obj\Debug\netstandard2.0\EventVBM.pdb
+C:\Users\Phi Vu\Desktop\VBM\EventVBM\EventVBM\EventVBM\bin\Debug\netstandard2.0\EventVBM.deps.json
+C:\Users\Phi Vu\Desktop\VBM\EventVBM\EventVBM\EventVBM\bin\Debug\netstandard2.0\EventVBM.dll
+C:\Users\Phi Vu\Desktop\VBM\EventVBM\EventVBM\EventVBM\bin\Debug\netstandard2.0\ref\EventVBM.dll
+C:\Users\Phi Vu\Desktop\VBM\EventVBM\EventVBM\EventVBM\bin\Debug\netstandard2.0\EventVBM.pdb
+C:\Users\Phi Vu\Desktop\VBM\EventVBM\EventVBM\EventVBM\obj\Debug\netstandard2.0\XamlC.stamp
+C:\Users\Phi Vu\Desktop\VBM\EventVBM\EventVBM\EventVBM\obj\Debug\netstandard2.0\Views\MenuPage.xaml.g.cs
