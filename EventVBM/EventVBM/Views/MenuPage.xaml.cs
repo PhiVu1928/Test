@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using EventVBM.Models;
 using EventVBM.Services;
+using Rg.Plugins.Popup.Extensions;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -43,9 +44,12 @@ namespace EventVBM.Views
             
         }
 
-        private void Collecitems_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        async void Collecitems_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
+            if (!(e.CurrentSelection.FirstOrDefault() is Items items))
+                return;
+            await Navigation.PushPopupAsync(new ExtraPage(items));
+            ((CollectionView)sender).SelectedItems = null;
         }
 
         async void ChildButton_SelectionChanged(object sender, SelectionChangedEventArgs e)

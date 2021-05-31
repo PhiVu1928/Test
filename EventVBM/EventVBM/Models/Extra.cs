@@ -9,7 +9,7 @@ namespace EventVBM.Models
         public int Id_extra { get; set; }
         public string Ten_extra { get; set; }
         public int Slg { get; set; }
-        public double NguyenGia { get; set; }
-        public double DonGia { get; set; }
+        public float NguyenGia { get; set; }
+        public float DonGia { get; set; }
     }
 }

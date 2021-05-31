@@ -12,3 +12,5 @@ C:\Users\Phi Vu\Desktop\VBM\EventVBM\EventVBM\EventVBM\bin\Debug\netstandard2.0\
 C:\Users\Phi Vu\Desktop\VBM\EventVBM\EventVBM\EventVBM\bin\Debug\netstandard2.0\EventVBM.pdb
 C:\Users\Phi Vu\Desktop\VBM\EventVBM\EventVBM\EventVBM\obj\Debug\netstandard2.0\XamlC.stamp
 C:\Users\Phi Vu\Desktop\VBM\EventVBM\EventVBM\EventVBM\obj\Debug\netstandard2.0\Views\MenuPage.xaml.g.cs
+C:\Users\Phi Vu\Desktop\VBM\EventVBM\EventVBM\EventVBM\obj\Debug\netstandard2.0\EventVBM.csprojAssemblyReference.cache
+C:\Users\Phi Vu\Desktop\VBM\EventVBM\EventVBM\EventVBM\obj\Debug\netstandard2.0\Views\ExtraPage.xaml.g.cs

@@ -17,7 +17,7 @@
                 <SearchBar Placeholder="Tìm sản phẩm" TextColor="Black"/>
                 <CollectionView ItemsSource="{Binding danhMucs}"
                                 VerticalScrollBarVisibility="Never"
-                                HeightRequest="55" Margin="10,10"
+                                HeightRequest="69" Margin="10,10"
                                 SelectionMode="Single"
                                 SelectionChanged="CollectionView_SelectionChanged">
                     <CollectionView.ItemsLayout>
@@ -27,17 +27,18 @@
                         <DataTemplate>
                             <Frame BorderColor="Yellow"
                                    BackgroundColor="WhiteSmoke"
-                                   WidthRequest="70" CornerRadius="20">
+                                   WidthRequest="75" CornerRadius="20">                             
                                 <Label Text="{Binding Name}" 
-                                       TextColor="Black" FontSize="14"
+                                       TextColor="Black" FontSize="10"
                                        HorizontalOptions="CenterAndExpand"
-                                       VerticalOptions="CenterAndExpand"/>
+                                       VerticalOptions="CenterAndExpand"
+                                       HorizontalTextAlignment="Center"/>
                             </Frame>                            
                         </DataTemplate>
                     </CollectionView.ItemTemplate>
                 </CollectionView>
                 <CollectionView x:Name="ChildButton"
-                                HeightRequest="54" Margin="10,0"
+                                HeightRequest="63" Margin="10,0"
                                 SelectionMode="Single"
                                 SelectionChanged="ChildButton_SelectionChanged">
                     <CollectionView.ItemsLayout>
@@ -46,11 +47,13 @@
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
                             <Frame BackgroundColor="WhiteSmoke"
-                                   WidthRequest="60" HasShadow="False"
+                                   WidthRequest="65"
+                                   HasShadow="False"
                                    CornerRadius="20">
-                                <Label Text="{Binding Name}" FontSize="12" TextColor="Black" 
-                                       HorizontalOptions="Center"
-                                       VerticalOptions="StartAndExpand"/>
+                                <Label Text="{Binding Name}" FontSize="8" TextColor="Black" 
+                                       HorizontalOptions="CenterAndExpand"
+                                       VerticalOptions="StartAndExpand"                                      
+                                       HorizontalTextAlignment="Center"/>
                             </Frame>
                         </DataTemplate>
                     </CollectionView.ItemTemplate>
@@ -75,7 +78,9 @@
                             <Image Source="{Binding HinhAnh}" Aspect="AspectFit" HeightRequest="100" WidthRequest="200"/>
                             <StackLayout HorizontalOptions="Start" VerticalOptions="Center">
                                 <Label Text="{Binding Ten_sp}" FontSize="14"/>
-                                <Label Text="{Binding NguyenGia,StringFormat='{0}đ'}" FontSize="13"/>
+                                <StackLayout x:Name="Priceitems" Orientation="Horizontal">
+                                    
+                                </StackLayout>
                             </StackLayout>
                         </StackLayout>
                     </DataTemplate>

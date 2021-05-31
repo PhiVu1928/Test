@@ -19,7 +19,7 @@ namespace EventVBM.Services
                    Cate_ID = 3,
                    Ten_sp = "Trà chanh sả",
                    Sluong = 0,
-                   NguyenGia = 15.000,
+                   NguyenGia = 15000,
                    HinhAnh ="https://www.phuclong.com.vn/uploads/dish/005aaeed660473-trnhnphclong.png"
                },
                new Items
@@ -27,7 +27,7 @@ namespace EventVBM.Services
                    Cate_ID = 3,
                    Ten_sp = "Trà chanh sả",
                    Sluong = 0,
-                   NguyenGia = 15.000,
+                   NguyenGia = 15000,
                    HinhAnh ="https://www.phuclong.com.vn/uploads/dish/005aaeed660473-trnhnphclong.png"
                },
                new Items
@@ -35,7 +35,7 @@ namespace EventVBM.Services
                    Cate_ID = 3,
                    Ten_sp = "Trà chanh sả",
                    Sluong = 0,
-                   NguyenGia = 15.000,
+                   NguyenGia = 15000,
                    HinhAnh ="https://www.phuclong.com.vn/uploads/dish/005aaeed660473-trnhnphclong.png"
                },
                new Items
@@ -43,7 +43,7 @@ namespace EventVBM.Services
                    Cate_ID = 3,
                    Ten_sp = "Trà chanh sả",
                    Sluong = 0,
-                   NguyenGia = 15.000,
+                   NguyenGia = 15000,
                    HinhAnh ="https://www.phuclong.com.vn/uploads/dish/005aaeed660473-trnhnphclong.png"
                },
                new Items
@@ -51,7 +51,7 @@ namespace EventVBM.Services
                    Cate_ID = 3,
                    Ten_sp = "Trà chanh sả",
                    Sluong = 0,
-                   NguyenGia = 15.000,
+                   NguyenGia = 15000,
                    HinhAnh ="https://www.phuclong.com.vn/uploads/dish/005aaeed660473-trnhnphclong.png"
                },
                new Items
@@ -59,14 +59,14 @@ namespace EventVBM.Services
                    Cate_ID = 3,
                    Ten_sp = "Trà chanh sả",
                    Sluong = 0,
-                   NguyenGia = 15.000,
+                   NguyenGia = 15000,
                    HinhAnh ="https://www.phuclong.com.vn/uploads/dish/005aaeed660473-trnhnphclong.png"
                },
                new Items
                {
                    HinhAnh = "WA_BRG_sogogi.jpg",
                    Ten_sp = "Burger Sogogi",
-                   NguyenGia = 29.000,
+                   NguyenGia = 29000,
                    Cate_ID = 7, 
                    Lst_extra = 2,
                    Lst_Giavi = 2,
@@ -75,7 +75,7 @@ namespace EventVBM.Services
                {
                    HinhAnh = "WA_BRG_gogi.jpg",
                    Ten_sp = "Burger Gogi",
-                   NguyenGia = 29.000,
+                   NguyenGia = 29000,
                    Cate_ID = 7, 
                    Lst_extra = 2,
                    Lst_Giavi = 2,
@@ -84,7 +84,7 @@ namespace EventVBM.Services
                {
                    HinhAnh = "WA_BRG_gaxe.jpg",
                    Ten_sp = "Burger Gà Xe",
-                   NguyenGia = 29.000,
+                   NguyenGia = 29000,
                    Cate_ID = 7, 
                    Lst_extra = 2,
                    Lst_Giavi = 2,
@@ -93,7 +93,7 @@ namespace EventVBM.Services
                {
                    HinhAnh = "WA_BRG_mattroi.jpg",
                    Ten_sp = "Burger Bánh Mặt Trời",
-                   NguyenGia = 25.000,
+                   NguyenGia = 25000,
                    Cate_ID = 7, 
                    Lst_extra = 2,
                    Lst_Giavi = 2,
@@ -102,7 +102,7 @@ namespace EventVBM.Services
                {
                    HinhAnh = "WA_BRG_xiumai.jpg",
                    Ten_sp = "Burger Xíu Mại",
-                   NguyenGia = 25.000,
+                   NguyenGia = 25000,
                    Cate_ID = 7, 
                    Lst_extra = 2,
                    Lst_Giavi = 2,
@@ -111,7 +111,7 @@ namespace EventVBM.Services
                {
                    HinhAnh = "WA_BRG_bbq.jpg",
                    Ten_sp = "Burger Thịt Nướng",
-                   NguyenGia = 25.000,
+                   NguyenGia = 25000,
                    Cate_ID = 7, 
                    Lst_extra = 2,
                    Lst_Giavi = 2,
@@ -120,7 +120,8 @@ namespace EventVBM.Services
                {
                    HinhAnh = "MY_Namthapcam.jpg",
                    Ten_sp = "Mì Ý Nấm Thập Cẩm",
-                   NguyenGia = 34.000,
+                   NguyenGia = 34000,
+                   Id_Price = 3,
                    Cate_ID = 8, 
                    Lst_extra = 3,
                    Lst_Giavi = 3,
@@ -129,7 +130,8 @@ namespace EventVBM.Services
                {
                    HinhAnh = "MY_Dauhunam.jpg",
                    Ten_sp = "Mì Ý Đậu Hũ Nấm",
-                   NguyenGia = 34.000,
+                   NguyenGia = 34000,
+                   Id_Price = 3,
                    Cate_ID = 8, 
                    Lst_extra = 3,
                    Lst_Giavi = 3,
@@ -138,7 +140,8 @@ namespace EventVBM.Services
                {
                    HinhAnh = "MY_Dauhuraucu.jpg",
                    Ten_sp = "Mì Ý Đậu Hũ Rau Củ",
-                   NguyenGia = 34.000,
+                   NguyenGia = 34000,
+                   Id_Price = 3,
                    Cate_ID = 8, 
                    Lst_extra = 3,
                    Lst_Giavi = 3,
@@ -147,7 +150,8 @@ namespace EventVBM.Services
                {
                    HinhAnh = "MY_Dauhuphalau.jpg",
                    Ten_sp = "Mì Ý Đậu Hũ Phá Lấu",
-                   NguyenGia = 34.000,
+                   NguyenGia = 34000,
+                   Id_Price = 3,
                    Cate_ID = 8, 
                    Lst_extra = 3,
                    Lst_Giavi = 3,
@@ -156,7 +160,8 @@ namespace EventVBM.Services
                {
                    HinhAnh = "zm_chaynam.jpg",
                    Ten_sp = "Bánh Mì Nấm Thập Cẩm",
-                   NguyenGia = 25.000,
+                   NguyenGia = 25000,
+                   Id_Price = 4,
                    Cate_ID = 1, 
                    Lst_extra = 1,
                    Lst_Giavi = 1,
@@ -165,7 +170,8 @@ namespace EventVBM.Services
                {
                    HinhAnh = "zm_chaydauhunuong.jpg",
                    Ten_sp = "Bánh Mì Đậu Hũ Nướng",
-                   NguyenGia = 29.000,
+                   NguyenGia = 29000,
+                   Id_Price = 2,
                    Cate_ID = 5,
                    Lst_extra = 1,
                    Lst_Giavi = 1,
@@ -174,7 +180,8 @@ namespace EventVBM.Services
                {
                    HinhAnh = "zm_chayphalaudauhu.jpg",
                    Ten_sp = "Bánh Mì Phá Lấu Đậu Hũ",
-                   NguyenGia = 29.000,
+                   NguyenGia = 29000,
+                   Id_Price = 2,
                    Cate_ID = 5,
                    Lst_extra = 1,
                    Lst_Giavi = 1,
@@ -183,7 +190,8 @@ namespace EventVBM.Services
                {
                    HinhAnh = "zm_chayraucurim.jpg",
                    Ten_sp = "Bánh Mì Rau Củ Rim",
-                   NguyenGia = 25.000,
+                   NguyenGia = 25000,
+                   Id_Price = 2,
                    Cate_ID = 5,
                    Lst_extra = 1,
                    Lst_Giavi = 1,
@@ -192,7 +200,8 @@ namespace EventVBM.Services
                {
                    HinhAnh = "zm_dauhuraucu.jpg",
                    Ten_sp = "Bánh Mì Rau Củ Om Đậu",
-                   NguyenGia = 29.000,
+                   NguyenGia = 29000,
+                   Id_Price = 2,
                    Cate_ID = 5,
                    Lst_extra = 1,
                    Lst_Giavi = 1,
@@ -201,7 +210,8 @@ namespace EventVBM.Services
                {
                    HinhAnh = "zm_namnguvi.jpg",
                    Ten_sp = "Bánh Mì Nấm Nướng",
-                   NguyenGia = 25.000,
+                   NguyenGia = 25000,
+                   Id_Price = 2,
                    Cate_ID = 5,
                    Lst_extra = 1,
                    Lst_Giavi = 1,
