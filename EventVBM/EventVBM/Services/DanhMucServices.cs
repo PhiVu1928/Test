@@ -12,7 +12,7 @@ namespace EventVBM.Services
         public List<DanhMuc> danhMucs;
         public List<DanhMuc> GetDanhMuc()
         {
-            danhMucs = new List<DanhMuc>()
+            danhMucs = new List<DanhMuc>()  
             {
                 new DanhMuc{ Cate_Id = 1, Name = "Món Chính"},
                 new DanhMuc{ Cate_Id = 2, Name = "Món Khác"},

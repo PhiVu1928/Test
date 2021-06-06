@@ -12,6 +12,7 @@ using Android.App;
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("EventVBM.Android")]
 [assembly: AssemblyCopyright("Copyright ©  2014")]
+[assembly: Application(UsesCleartextTraffic = true)]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 [assembly: ComVisible(false)]

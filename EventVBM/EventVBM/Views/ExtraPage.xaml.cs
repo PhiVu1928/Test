@@ -22,6 +22,12 @@ namespace EventVBM.Views
             _model = new ExtraViewModel(items);
             BindingContext = _model;
         }
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            Pricess.ItemsSource = _model.Prices;
+            CollecWater.ItemsSource = _model.ItemsWater;
+        }
 
         async void Button_Clicked(object sender, EventArgs e)
         {

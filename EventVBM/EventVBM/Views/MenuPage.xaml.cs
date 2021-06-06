@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using EventVBM.Models;
+using EventVBM.ViewModels;
 using EventVBM.Services;
+using Newtonsoft.Json;
 using Rg.Plugins.Popup.Extensions;
 
 using Xamarin.Forms;
@@ -15,9 +18,10 @@ namespace EventVBM.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MenuPage : ContentPage
     {
+        public int pagesize;
         public MenuPage()
         {
-            InitializeComponent();
+            InitializeComponent();            
         }
 
         protected override void OnAppearing()
@@ -25,40 +29,19 @@ namespace EventVBM.Views
             base.OnAppearing();
             ChildButton.IsVisible = false;
         }
-        async void CollectionView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+
+        private void CollectionView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (!(e.CurrentSelection.FirstOrDefault() is DanhMuc danhMuc))
+            if (!(e.CurrentSelection.FirstOrDefault() is Data data))
                 return;
-            var data = await DanhMucServices.GetDmByParentId(100,danhMuc.Cate_Id);
-            if(data.Count() > 0)
+            if(data.lst_sub_menu.Count != 1)
             {
-                ChildButton.ItemsSource = data;
                 ChildButton.IsVisible = true;
             }
             else
-            {
-                var items = await ItemsServices.GetItemsByCate(100, danhMuc.Cate_Id);
-                Collecitems.ItemsSource = items;
+            {               
                 ChildButton.IsVisible = false;
             }
-            
-        }
-
-        async void Collecitems_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            if (!(e.CurrentSelection.FirstOrDefault() is Items items))
-                return;
-            await Navigation.PushPopupAsync(new ExtraPage(items));
-            ((CollectionView)sender).SelectedItems = null;
-        }
-
-        async void ChildButton_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            if (!(e.CurrentSelection.FirstOrDefault() is DanhMuc danhMuc))
-                return;
-            var data = await ItemsServices.GetItemsByCate(100, danhMuc.Cate_Id);
-            Collecitems.ItemsSource = data;
-            ((CollectionView)sender).SelectedItems = null;
         }
     }
 }

@@ -20,6 +20,7 @@ namespace EventVBM.Services
                    Ten_sp = "Trà chanh sả",
                    Sluong = 0,
                    NguyenGia = 15000,
+                   DonGia = 9000,
                    HinhAnh ="https://www.phuclong.com.vn/uploads/dish/005aaeed660473-trnhnphclong.png"
                },
                new Items
@@ -28,6 +29,7 @@ namespace EventVBM.Services
                    Ten_sp = "Trà chanh sả",
                    Sluong = 0,
                    NguyenGia = 15000,
+                   DonGia = 9000,
                    HinhAnh ="https://www.phuclong.com.vn/uploads/dish/005aaeed660473-trnhnphclong.png"
                },
                new Items
@@ -36,6 +38,7 @@ namespace EventVBM.Services
                    Ten_sp = "Trà chanh sả",
                    Sluong = 0,
                    NguyenGia = 15000,
+                   DonGia = 9000,
                    HinhAnh ="https://www.phuclong.com.vn/uploads/dish/005aaeed660473-trnhnphclong.png"
                },
                new Items
@@ -44,6 +47,7 @@ namespace EventVBM.Services
                    Ten_sp = "Trà chanh sả",
                    Sluong = 0,
                    NguyenGia = 15000,
+                   DonGia = 9000,
                    HinhAnh ="https://www.phuclong.com.vn/uploads/dish/005aaeed660473-trnhnphclong.png"
                },
                new Items
@@ -52,6 +56,7 @@ namespace EventVBM.Services
                    Ten_sp = "Trà chanh sả",
                    Sluong = 0,
                    NguyenGia = 15000,
+                   DonGia = 9000,
                    HinhAnh ="https://www.phuclong.com.vn/uploads/dish/005aaeed660473-trnhnphclong.png"
                },
                new Items
@@ -60,6 +65,7 @@ namespace EventVBM.Services
                    Ten_sp = "Trà chanh sả",
                    Sluong = 0,
                    NguyenGia = 15000,
+                   DonGia = 9000,
                    HinhAnh ="https://www.phuclong.com.vn/uploads/dish/005aaeed660473-trnhnphclong.png"
                },
                new Items
@@ -229,6 +235,12 @@ namespace EventVBM.Services
         {
             await Task.Delay(time);
             var data = new ItemsServices().GetItems().Where(x => x.Cate_ID == cateId);
+            return data.ToList();
+        }
+        public static async Task<List<Items>> GetWater(int time)
+        {
+            await Task.Delay(time);
+            var data = new ItemsServices().GetItems().Where(x => x.Cate_ID == 3);
             return data.ToList();
         }
     }

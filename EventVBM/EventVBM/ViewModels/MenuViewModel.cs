@@ -1,6 +1,4 @@
 ﻿using System;
-
-
 using EventVBM.Models;
 using EventVBM.Services;
 using EventVBM.ViewModels;
@@ -9,84 +7,115 @@ using System.Diagnostics;
 using MvvmHelpers;
 using System.Linq;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
+using System.Net.Http;
+using System.Collections.Generic;
+using Xamarin.Forms.Extended;
 
 namespace EventVBM.ViewModels
 {
     public class MenuViewModel : BaseViewModel
     {
-        public int page = 0;
-        public int pagesize = 10;
-        public Command GetCateItems { get; set; }
-        public Command Lazyload { get; set; }
-        public ObservableRangeCollection<DanhMuc> danhMucs { get; set; }
-        public ObservableRangeCollection<Items> Items { get; set; }
+        public int pagesize = 5;
+        public LstSubMenu _selectedSubmenu { get; set; }
+        public Data _selectedDanhmucs { get; set; }
+        public ObservableRangeCollection<LstSubMenu> lstSubMenus { get; set; }
+        public ObservableRangeCollection<Data> danhMucs { get; set; }
+        public InfiniteScrollCollection<LstEme> lstEmes { get; set; }
         public MenuViewModel()
         {
-            danhMucs = new ObservableRangeCollection<DanhMuc>();
-            Items = new ObservableRangeCollection<Items>();
-            Lazyload = new Command(async () => await Getlazy());
-            GetCateItems = new Command(async () => await GetCateItemsAsync());
-            GetItems();
-            GetDM();
-        }
-
-        private Task GetCateItemsAsync()
-        {
-            throw new NotImplementedException();
-        }
-
-        private void GetItems()
-        {
-            Items.Clear();
-            var data = new ItemsServices().GetItems();
-            foreach(var items in data.Take(pagesize))
+            danhMucs = new ObservableRangeCollection<Data>();
+            lstEmes = new InfiniteScrollCollection<LstEme>
             {
-                Items.Add(items);
+                OnLoadMore = async () =>
+                {
+                    await Task.Delay(1000);
+                    IsBusy = true;
+                    int page = lstEmes.Count() / pagesize;
+                    List<LstEme> lsts = await GetEmenu(page, pagesize);
+                    IsBusy = false;
+                    return lsts;
+                },
+                OnCanLoadMore = () => lstEmes.Count < 20               
+            };
+            GetAPI();
+        }
+        public Data SelectedDanhmucs
+        {
+            get
+            {
+                return _selectedDanhmucs;
+            }
+            set
+            {
+                _selectedDanhmucs = value;
+                if(_selectedDanhmucs.lst_sub_menu.Count != 1)
+                {
+                    lstSubMenus.AddRange(lstSubMenus);
+                }
+                else
+                {
+                    lstEmes.Clear();
+                    foreach(var items in _selectedDanhmucs.lst_sub_menu)
+                    {
+                        lstEmes.AddRange(items.lst_emes.Take(pagesize));
+                    }
+                }
+                OnPropertyChanged();
             }
         }
-
-        private async Task Getlazy()
+        public LstSubMenu SelectedSubmenu
         {
-            if (IsBusy)
-                return;
-            IsBusy = true;
+            get
+            {
+                return _selectedSubmenu;
+            }
+            set
+            {
+                _selectedSubmenu = value;
+                lstEmes.Clear();
+                lstEmes.AddRange(_selectedSubmenu.lst_emes.Take(pagesize));
+                OnPropertyChanged();
+            }
+        }
+        private int _total;
+        public int Total
+        {
+            get
+            {
+                return _total;
+            }
+            set
+            {
+                _total = value;
+                OnPropertyChanged();
+            }
+        }
+        
+        public async Task<List<LstEme>> GetEmenu(int page, int pagesize)
+        {
             await Task.Delay(100);
-            Items.AddRange(Items.Skip(page * pagesize).Take(pagesize));
-            page += pagesize;
-            IsBusy = false;
+            var data = SelectedSubmenu.lst_emes.Skip(page * pagesize).Take(pagesize);
+            return data.ToList();
         }
+        public async void GetAPI()
+        {
+            try
+            {
+                using (var cl = new HttpClient())
+                {
+                    string url = "http://vuabanhmi.com:6519/api/UserData/get_menu_data?channel=1";
+                    var res = await cl.GetAsync(url);
+                    string js = await res.Content.ReadAsStringAsync();
+                    var DMlist = JsonConvert.DeserializeObject<Root>(js);
+                    danhMucs.AddRange(DMlist.Datas);
+                }
+            }
+            catch (Exception ex)
+            {
+                await Application.Current.MainPage.DisplayAlert("Errors", ex.ToString(), "OK");
+            }
 
-        public async void Getitems()
-        {
-            try
-            {
-                Items.Clear();
-                var data = await ItemsServices.Getitems(100);
-                foreach(var items in data)
-                {
-                    Items.Add(items);
-                }
-            }
-            catch(Exception ex)
-            {
-                Debug.WriteLine(ex);
-            }
-        }
-        public async void GetDM()
-        {
-            try
-            {
-                danhMucs.Clear();
-                var data = await DanhMucServices.GetDmAsync(100);
-                foreach(var items in data)
-                {
-                    danhMucs.Add(items);
-                }
-            }
-            catch(Exception ex)
-            {
-                Debug.WriteLine(ex);
-            }
         }
     }
 }

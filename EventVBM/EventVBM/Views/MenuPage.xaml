@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:vm="clr-namespace:EventVBM.ViewModels"
+             xmlns:sf="clr-namespace:Xamarin.Forms.Extended;assembly=Xamarin.Forms.Extended.InfiniteScrolling"
              x:Class="EventVBM.Views.MenuPage">
     <ContentPage.BindingContext>
         <vm:MenuViewModel/>
@@ -19,6 +20,7 @@
                                 VerticalScrollBarVisibility="Never"
                                 HeightRequest="69" Margin="10,10"
                                 SelectionMode="Single"
+                                SelectedItem="{Binding SelectedDanhmucs}"
                                 SelectionChanged="CollectionView_SelectionChanged">
                     <CollectionView.ItemsLayout>
                         <GridItemsLayout HorizontalItemSpacing="10" Orientation="Horizontal"/>
@@ -28,7 +30,7 @@
                             <Frame BorderColor="Yellow"
                                    BackgroundColor="WhiteSmoke"
                                    WidthRequest="75" CornerRadius="20">                             
-                                <Label Text="{Binding Name}" 
+                                <Label Text="{Binding name_vn}" 
                                        TextColor="Black" FontSize="10"
                                        HorizontalOptions="CenterAndExpand"
                                        VerticalOptions="CenterAndExpand"
@@ -38,9 +40,10 @@
                     </CollectionView.ItemTemplate>
                 </CollectionView>
                 <CollectionView x:Name="ChildButton"
+                                ItemsSource="{Binding lstSubMenus}"
                                 HeightRequest="63" Margin="10,0"
                                 SelectionMode="Single"
-                                SelectionChanged="ChildButton_SelectionChanged">
+                                SelectedItem="{Binding SelectedSubmenu}">
                     <CollectionView.ItemsLayout>
                         <GridItemsLayout HorizontalItemSpacing="10" Orientation="Horizontal"/>
                     </CollectionView.ItemsLayout>
@@ -50,7 +53,7 @@
                                    WidthRequest="65"
                                    HasShadow="False"
                                    CornerRadius="20">
-                                <Label Text="{Binding Name}" FontSize="8" TextColor="Black" 
+                                <Label Text="{Binding name_vn}" FontSize="8" TextColor="Black" 
                                        HorizontalOptions="CenterAndExpand"
                                        VerticalOptions="StartAndExpand"                                      
                                        HorizontalTextAlignment="Center"/>
@@ -59,37 +62,56 @@
                     </CollectionView.ItemTemplate>
                 </CollectionView>
             </StackLayout>
-            <CollectionView Grid.Row="1"
-                            x:Name="Collecitems"
-                            ItemsSource="{Binding Items}"
-                            VerticalScrollBarVisibility="Never"
-                            SelectionChanged="Collecitems_SelectionChanged"
-                            SelectionMode="Single" Margin="0,20"
-                            RemainingItemsThreshold="4"
-                            RemainingItemsThresholdReachedCommand="{Binding Lazyload}">
-                <CollectionView.ItemsLayout>
-                    <GridItemsLayout Orientation="Vertical" VerticalItemSpacing="20"/>
-                </CollectionView.ItemsLayout>
-                <CollectionView.ItemTemplate>
+            <ListView Grid.Row="1"
+                      x:Name="Collectitems"
+                      ItemsSource="{Binding lstEmes}"
+                      HasUnevenRows="True">
+                <ListView.Behaviors>
+                    <sf:InfiniteScrollBehavior IsLoadingMore="{Binding IsBusy}" />
+                </ListView.Behaviors>
+                <ListView.ItemTemplate>
                     <DataTemplate>
-                        <StackLayout Orientation="Horizontal"
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal"
                                      VerticalOptions="Center"
-                                     HorizontalOptions="Start">
-                            <Image Source="{Binding HinhAnh}" Aspect="AspectFit" HeightRequest="100" WidthRequest="200"/>
-                            <StackLayout HorizontalOptions="Start" VerticalOptions="Center">
-                                <Label Text="{Binding Ten_sp}" FontSize="14"/>
-                                <StackLayout x:Name="Priceitems" Orientation="Horizontal">
-                                    
+                                     HorizontalOptions="Start"
+                                     HeightRequest="150">
+                                <Image Source="{Binding img}" Aspect="AspectFit" HeightRequest="100" WidthRequest="130"/>
+                                <StackLayout HorizontalOptions="Start" VerticalOptions="Center">
+                                    <Label Text="{Binding name_vn}" FontSize="14"/>
+                                    <CollectionView ItemsSource="{Binding lst_size}">
+                                        <CollectionView.ItemsLayout>
+                                            <GridItemsLayout Orientation="Horizontal" HorizontalItemSpacing="10"/>
+                                        </CollectionView.ItemsLayout>
+                                        <CollectionView.ItemTemplate>
+                                            <DataTemplate>
+                                                <StackLayout Orientation="Vertical">
+                                                    <Label Text="{Binding size_name_vn}" FontSize="12"/>
+                                                    <Label Text="{Binding price,StringFormat='{0}đ'}" FontSize="12"/>
+                                                </StackLayout>
+                                            </DataTemplate>
+                                        </CollectionView.ItemTemplate>
+                                    </CollectionView>
                                 </StackLayout>
                             </StackLayout>
-                        </StackLayout>
+                        </ViewCell>
                     </DataTemplate>
-                </CollectionView.ItemTemplate>
-            </CollectionView>
-            <ActivityIndicator HorizontalOptions="Center"
-                               VerticalOptions="End"
-                               IsRunning="{Binding IsBusy}"
-                               Color="Yellow"/>
+                </ListView.ItemTemplate>
+                <ListView.Footer>
+                    <Grid Padding="5" IsVisible="{Binding IsBusy}">
+                        <!-- Footer HeightRequest must be 0 when not visible -->
+                        <Grid.Triggers>
+                            <Trigger TargetType="Grid" Property="IsVisible" Value="False">
+                                <Setter Property="HeightRequest" Value="0" />
+                            </Trigger>
+                        </Grid.Triggers>
+                        <Label Text="Loading..." TextColor="Crimson" FontSize="Large"
+                           VerticalOptions="Center" HorizontalOptions="Center" />
+                    </Grid>
+                </ListView.Footer>
+            </ListView>
+            
         </Grid>
+        
     </ContentPage.Content>
 </ContentPage>

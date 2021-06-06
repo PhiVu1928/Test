@@ -26,7 +26,6 @@
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
                 <StackLayout Orientation="Vertical">
                     <Button Text="x" TextColor="Black" BackgroundColor="White" HorizontalOptions="End" Clicked="Button_Clicked"/>
@@ -43,25 +42,57 @@
                         </StackLayout>
                     </StackLayout>
                     <CollectionView ItemsSource="{Binding Prices}"
-                                    HorizontalScrollBarVisibility="Always">
+                                    x:Name="Pricess"
+                                    HorizontalScrollBarVisibility="Never"
+                                    HeightRequest="70"
+                                    SelectionMode="Single">
                         <CollectionView.ItemsLayout>
                             <GridItemsLayout Orientation="Horizontal" HorizontalItemSpacing="10"/>
                         </CollectionView.ItemsLayout>
                         <CollectionView.ItemTemplate>
                             <DataTemplate>
-                                <Frame HeightRequest="50"
-                                       WidthRequest="50"
-                                       CornerRadius="10"
-                                       BackgroundColor="WhiteSmoke">
-                                    <StackLayout Orientation="Vertical">
-                                        <Label Text="{Binding Size_Name}" TextColor="Black" VerticalTextAlignment="Center"/>
-                                        <Label Text="{Binding Size_Price}" TextColor="Black" VerticalTextAlignment="Center"/>
+                                <Frame WidthRequest="70"
+                                       CornerRadius="20"
+                                       BackgroundColor="WhiteSmoke"
+                                       BorderColor="Yellow"
+                                       HorizontalOptions="Center"
+                                       VerticalOptions="Center">
+                                    <StackLayout Orientation="Vertical" VerticalOptions="Center" HorizontalOptions="Center" Margin="0,-5">
+                                        <Label Text="{Binding Size_Name}" TextColor="Black" FontSize="10" HorizontalOptions="Center"/>
+                                        <Label Text="{Binding Size_Price,StringFormat='{0} đ'}" TextColor="Black" HorizontalOptions="Center" FontSize="10"/>
                                     </StackLayout>                                    
                                 </Frame>
                             </DataTemplate>
                         </CollectionView.ItemTemplate>
                     </CollectionView>
+                    <Label Text="Nước thêm vào sẽ được giảm giá" TextColor="ForestGreen" FontSize="14" HorizontalOptions="Start" FontAttributes="Bold"/>
+                    <CollectionView x:Name="CollecWater" 
+                                    SelectionMode="Single"
+                                    HeightRequest="70">
+                        <CollectionView.ItemsLayout>
+                            <GridItemsLayout HorizontalItemSpacing="10" Orientation="Horizontal"/>
+                        </CollectionView.ItemsLayout>
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <Frame WidthRequest="80"
+                                       CornerRadius="20"
+                                       BackgroundColor="WhiteSmoke"
+                                       BorderColor="Yellow"
+                                       HorizontalOptions="Center"
+                                       VerticalOptions="Center">
+                                    <StackLayout Orientation="Vertical" VerticalOptions="Center" HorizontalOptions="Center" Margin="0,-5">
+                                        <Label Text="{Binding Ten_sp}" TextColor="Black" FontSize="10" HorizontalOptions="Center"/>
+                                        <Grid>
+                                            <Label Text="{Binding NguyenGia,StringFormat='{0} đ'}" TextDecorations="Strikethrough" TextColor="Black" HorizontalOptions="Start" FontSize="6"/>
+                                            <Label Text="{Binding DonGia,StringFormat='{0} đ'}" TextColor="Black" HorizontalOptions="End" FontSize="10"/>
+                                        </Grid>
+                                    </StackLayout>
+                                </Frame>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
                 </StackLayout>
+                
             </Grid>
         </Frame>
     </StackLayout>

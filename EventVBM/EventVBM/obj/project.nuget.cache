@@ -1,20 +1,27 @@
 {
   "version": 2,
-  "dgSpecHash": "DeBLagq40xovfzL0xK3we4msuit7/AWxJ0PFoi7MnP25jw7RAl6UdfrJHMnWd1Y3gIOE79emrjokEEawgwtU8g==",
+  "dgSpecHash": "yrhsgkYmequwEpSXA7NUvXDugcgZInMMOH2Ts96ZqFifAumy899pFLFA7fcvUdo8Vf6rCOfK95XjJGDpMI6cRA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Phi Vu\\Desktop\\VBM\\EventVBM\\EventVBM\\EventVBM\\EventVBM.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Phi Vu\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\Phi Vu\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
     "C:\\Users\\Phi Vu\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\Phi Vu\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
     "C:\\Users\\Phi Vu\\.nuget\\packages\\refractored.mvvmhelpers\\1.6.2\\refractored.mvvmhelpers.1.6.2.nupkg.sha512",
     "C:\\Users\\Phi Vu\\.nuget\\packages\\rg.plugins.popup\\2.0.0.11\\rg.plugins.popup.2.0.0.11.nupkg.sha512",
+    "C:\\Users\\Phi Vu\\.nuget\\packages\\syncfusion.licensing\\19.1.0.66\\syncfusion.licensing.19.1.0.66.nupkg.sha512",
+    "C:\\Users\\Phi Vu\\.nuget\\packages\\syncfusion.xamarin.core\\19.1.0.66\\syncfusion.xamarin.core.19.1.0.66.nupkg.sha512",
+    "C:\\Users\\Phi Vu\\.nuget\\packages\\syncfusion.xamarin.datasource\\19.1.0.66\\syncfusion.xamarin.datasource.19.1.0.66.nupkg.sha512",
+    "C:\\Users\\Phi Vu\\.nuget\\packages\\syncfusion.xamarin.gridcommon\\19.1.0.66\\syncfusion.xamarin.gridcommon.19.1.0.66.nupkg.sha512",
+    "C:\\Users\\Phi Vu\\.nuget\\packages\\syncfusion.xamarin.sflistview\\19.1.0.66\\syncfusion.xamarin.sflistview.19.1.0.66.nupkg.sha512",
     "C:\\Users\\Phi Vu\\.nuget\\packages\\system.componentmodel\\4.3.0\\system.componentmodel.4.3.0.nupkg.sha512",
     "C:\\Users\\Phi Vu\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
     "C:\\Users\\Phi Vu\\.nuget\\packages\\system.runtime\\4.3.0\\system.runtime.4.3.0.nupkg.sha512",
     "C:\\Users\\Phi Vu\\.nuget\\packages\\system.valuetuple\\4.5.0\\system.valuetuple.4.5.0.nupkg.sha512",
     "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\xamarin.essentials\\1.6.1\\xamarin.essentials.1.6.1.nupkg.sha512",
     "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\xamarin.forms\\5.0.0.2012\\xamarin.forms.5.0.0.2012.nupkg.sha512",
+    "C:\\Users\\Phi Vu\\.nuget\\packages\\xamarin.forms.extended.infinitescrolling\\1.0.0-preview2\\xamarin.forms.extended.infinitescrolling.1.0.0-preview2.nupkg.sha512",
     "C:\\Users\\Phi Vu\\.nuget\\packages\\xamarin.forms.pancakeview\\2.3.0.759\\xamarin.forms.pancakeview.2.3.0.759.nupkg.sha512"
   ],
   "logs": []

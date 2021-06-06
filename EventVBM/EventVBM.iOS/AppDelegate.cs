@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Syncfusion.XForms.iOS.EffectsView;
+
 
 using Foundation;
 using UIKit;
+using Syncfusion.ListView.XForms.iOS;
 
 namespace EventVBM.iOS
 {
@@ -25,6 +28,9 @@ namespace EventVBM.iOS
             Rg.Plugins.Popup.Popup.Init();
 
             global::Xamarin.Forms.Forms.Init();
+            SfListViewRenderer.Init();
+            SfEffectsViewRenderer.Init();
+
             LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);
