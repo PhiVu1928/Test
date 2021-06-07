@@ -277,7 +277,7 @@
           "lib/netstandard1.0/Xamarin.Forms.Extended.InfiniteScrolling.dll": {}
         }
       },
-      "Xamarin.Forms.PancakeView/2.3.0.759": {
+      "Xamarin.Forms.PancakeView/2.3.0.763-beta": {
         "type": "package",
         "dependencies": {
           "System.ComponentModel": "4.3.0",
@@ -301,7 +301,7 @@
           "Xamarin.Essentials": "1.6.1",
           "Xamarin.Forms": "5.0.0.2012",
           "Xamarin.Forms.Extended.InfiniteScrolling": "1.0.0-preview2",
-          "Xamarin.Forms.PancakeView": "2.3.0.759"
+          "Xamarin.Forms.PancakeView": "2.3.0.763-beta"
         },
         "compile": {
           "bin/placeholder/EventVBM.dll": {}
@@ -587,7 +587,7 @@
           "lib/netstandard1.0/Xamarin.Forms.Extended.InfiniteScrolling.dll": {}
         }
       },
-      "Xamarin.Forms.PancakeView/2.3.0.759": {
+      "Xamarin.Forms.PancakeView/2.3.0.763-beta": {
         "type": "package",
         "dependencies": {
           "System.ComponentModel": "4.3.0",
@@ -611,7 +611,7 @@
           "Xamarin.Essentials": "1.6.1",
           "Xamarin.Forms": "5.0.0.2012",
           "Xamarin.Forms.Extended.InfiniteScrolling": "1.0.0-preview2",
-          "Xamarin.Forms.PancakeView": "2.3.0.759"
+          "Xamarin.Forms.PancakeView": "2.3.0.763-beta"
         },
         "compile": {
           "bin/placeholder/EventVBM.dll": {}
@@ -897,7 +897,7 @@
           "lib/netstandard1.0/Xamarin.Forms.Extended.InfiniteScrolling.dll": {}
         }
       },
-      "Xamarin.Forms.PancakeView/2.3.0.759": {
+      "Xamarin.Forms.PancakeView/2.3.0.763-beta": {
         "type": "package",
         "dependencies": {
           "System.ComponentModel": "4.3.0",
@@ -921,7 +921,7 @@
           "Xamarin.Essentials": "1.6.1",
           "Xamarin.Forms": "5.0.0.2012",
           "Xamarin.Forms.Extended.InfiniteScrolling": "1.0.0-preview2",
-          "Xamarin.Forms.PancakeView": "2.3.0.759"
+          "Xamarin.Forms.PancakeView": "2.3.0.763-beta"
         },
         "compile": {
           "bin/placeholder/EventVBM.dll": {}
@@ -1207,7 +1207,7 @@
           "lib/netstandard1.0/Xamarin.Forms.Extended.InfiniteScrolling.dll": {}
         }
       },
-      "Xamarin.Forms.PancakeView/2.3.0.759": {
+      "Xamarin.Forms.PancakeView/2.3.0.763-beta": {
         "type": "package",
         "dependencies": {
           "System.ComponentModel": "4.3.0",
@@ -1231,7 +1231,7 @@
           "Xamarin.Essentials": "1.6.1",
           "Xamarin.Forms": "5.0.0.2012",
           "Xamarin.Forms.Extended.InfiniteScrolling": "1.0.0-preview2",
-          "Xamarin.Forms.PancakeView": "2.3.0.759"
+          "Xamarin.Forms.PancakeView": "2.3.0.763-beta"
         },
         "compile": {
           "bin/placeholder/EventVBM.dll": {}
@@ -1911,10 +1911,10 @@
         "xamarin.forms.extended.infinitescrolling.nuspec"
       ]
     },
-    "Xamarin.Forms.PancakeView/2.3.0.759": {
-      "sha512": "TGVsLJuGd/PKlyhmcBxZnHhHqyhYppzyrdb2q/sy+S6dQYkeGM8A+HmIIHVhbi7r8Sjasa/HRBkOmTSYQOZzhQ==",
+    "Xamarin.Forms.PancakeView/2.3.0.763-beta": {
+      "sha512": "GghetVBkMzzb6L1Ul3SH9JnHIvdmhgjRacAQaD5IUGMr2yxFtSeB0lRYTT0QjNJFK6TSgyh/lDwqMSaCMBjbMg==",
       "type": "package",
-      "path": "xamarin.forms.pancakeview/2.3.0.759",
+      "path": "xamarin.forms.pancakeview/2.3.0.763-beta",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -1943,7 +1943,7 @@
         "lib/xamarinios10/Xamarin.Forms.PancakeView.xml",
         "lib/xamarinmac20/Xamarin.Forms.PancakeView.dll",
         "lib/xamarinmac20/Xamarin.Forms.PancakeView.xml",
-        "xamarin.forms.pancakeview.2.3.0.759.nupkg.sha512",
+        "xamarin.forms.pancakeview.2.3.0.763-beta.nupkg.sha512",
         "xamarin.forms.pancakeview.nuspec"
       ]
     },

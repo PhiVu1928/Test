@@ -16,7 +16,7 @@ namespace EventVBM.ViewModels
 {
     public class MenuViewModel : BaseViewModel
     {
-        public int pagesize = 5;
+        public int pagesize = 10;
         public LstSubMenu _selectedSubmenu { get; set; }
         public Data _selectedDanhmucs { get; set; }
         public ObservableRangeCollection<LstSubMenu> lstSubMenus { get; set; }
@@ -25,6 +25,7 @@ namespace EventVBM.ViewModels
         public MenuViewModel()
         {
             danhMucs = new ObservableRangeCollection<Data>();
+            lstSubMenus = new ObservableRangeCollection<LstSubMenu>();
             lstEmes = new InfiniteScrollCollection<LstEme>
             {
                 OnLoadMore = async () =>
@@ -36,7 +37,7 @@ namespace EventVBM.ViewModels
                     IsBusy = false;
                     return lsts;
                 },
-                OnCanLoadMore = () => lstEmes.Count < 20               
+                OnCanLoadMore = () => lstEmes.Count < Total
             };
             GetAPI();
         }
@@ -49,17 +50,20 @@ namespace EventVBM.ViewModels
             set
             {
                 _selectedDanhmucs = value;
-                if(_selectedDanhmucs.lst_sub_menu.Count != 1)
+                lstSubMenus.Clear();
+                if (_selectedDanhmucs.lst_sub_menu.Count != 1)
                 {
-                    lstSubMenus.AddRange(lstSubMenus);
+                    lstSubMenus.AddRange(_selectedDanhmucs.lst_sub_menu);
                 }
                 else
                 {
                     lstEmes.Clear();
+                    Total = 0;
                     foreach(var items in _selectedDanhmucs.lst_sub_menu)
                     {
-                        lstEmes.AddRange(items.lst_emes.Take(pagesize));
-                    }
+                        lstEmes.AddRange(items.lst_emes.Where(x => x.img != ""));
+                        Total++;
+                    }                    
                 }
                 OnPropertyChanged();
             }
@@ -73,8 +77,10 @@ namespace EventVBM.ViewModels
             set
             {
                 _selectedSubmenu = value;
+                Total = 0;
                 lstEmes.Clear();
                 lstEmes.AddRange(_selectedSubmenu.lst_emes.Take(pagesize));
+                Total = _selectedSubmenu.lst_emes.Count();
                 OnPropertyChanged();
             }
         }
@@ -98,6 +104,8 @@ namespace EventVBM.ViewModels
             var data = SelectedSubmenu.lst_emes.Skip(page * pagesize).Take(pagesize);
             return data.ToList();
         }
+        
+
         public async void GetAPI()
         {
             try

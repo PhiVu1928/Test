@@ -15,7 +15,7 @@
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <StackLayout Orientation="Vertical">
-                <SearchBar Placeholder="Tìm sản phẩm" TextColor="Black"/>
+                <Button Text="abcd" x:Name="ScrolltoBottom" TextColor="Black"/>
                 <CollectionView ItemsSource="{Binding danhMucs}"
                                 VerticalScrollBarVisibility="Never"
                                 HeightRequest="69" Margin="10,10"
@@ -58,59 +58,61 @@
                                        VerticalOptions="StartAndExpand"                                      
                                        HorizontalTextAlignment="Center"/>
                             </Frame>
+                            
                         </DataTemplate>
                     </CollectionView.ItemTemplate>
                 </CollectionView>
             </StackLayout>
-            <ListView Grid.Row="1"
+            <ScrollView Grid.Row="1"
+                        x:Name="scrollView">
+                <ListView 
                       x:Name="Collectitems"
                       ItemsSource="{Binding lstEmes}"
-                      HasUnevenRows="True">
-                <ListView.Behaviors>
-                    <sf:InfiniteScrollBehavior IsLoadingMore="{Binding IsBusy}" />
-                </ListView.Behaviors>
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <StackLayout Orientation="Horizontal"
+                      HasUnevenRows="True">                   
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Orientation="Horizontal"
                                      VerticalOptions="Center"
                                      HorizontalOptions="Start"
                                      HeightRequest="150">
-                                <Image Source="{Binding img}" Aspect="AspectFit" HeightRequest="100" WidthRequest="130"/>
-                                <StackLayout HorizontalOptions="Start" VerticalOptions="Center">
-                                    <Label Text="{Binding name_vn}" FontSize="14"/>
-                                    <CollectionView ItemsSource="{Binding lst_size}">
-                                        <CollectionView.ItemsLayout>
-                                            <GridItemsLayout Orientation="Horizontal" HorizontalItemSpacing="10"/>
-                                        </CollectionView.ItemsLayout>
-                                        <CollectionView.ItemTemplate>
-                                            <DataTemplate>
-                                                <StackLayout Orientation="Vertical">
-                                                    <Label Text="{Binding size_name_vn}" FontSize="12"/>
-                                                    <Label Text="{Binding price,StringFormat='{0}đ'}" FontSize="12"/>
-                                                </StackLayout>
-                                            </DataTemplate>
-                                        </CollectionView.ItemTemplate>
-                                    </CollectionView>
+                                    <Image Source="{Binding img}" Aspect="AspectFit" HeightRequest="100" WidthRequest="130"/>
+                                    <StackLayout HorizontalOptions="Start" VerticalOptions="Center">
+                                        <Label Text="{Binding name_vn}" FontSize="14"/>
+                                        <CollectionView ItemsSource="{Binding lst_size}">
+                                            <CollectionView.ItemsLayout>
+                                                <GridItemsLayout Orientation="Horizontal" HorizontalItemSpacing="10"/>
+                                            </CollectionView.ItemsLayout>
+                                            <CollectionView.ItemTemplate>
+                                                <DataTemplate>
+                                                    <StackLayout Orientation="Vertical">
+                                                        <Label Text="{Binding size_name_vn}" FontSize="12"/>
+                                                        <Label Text="{Binding price,StringFormat='{0}đ'}" FontSize="12"/>
+                                                    </StackLayout>
+                                                </DataTemplate>
+                                            </CollectionView.ItemTemplate>
+                                        </CollectionView>
+                                    </StackLayout>
                                 </StackLayout>
-                            </StackLayout>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-                <ListView.Footer>
-                    <Grid Padding="5" IsVisible="{Binding IsBusy}">
-                        <!-- Footer HeightRequest must be 0 when not visible -->
-                        <Grid.Triggers>
-                            <Trigger TargetType="Grid" Property="IsVisible" Value="False">
-                                <Setter Property="HeightRequest" Value="0" />
-                            </Trigger>
-                        </Grid.Triggers>
-                        <Label Text="Loading..." TextColor="Crimson" FontSize="Large"
-                           VerticalOptions="Center" HorizontalOptions="Center" />
-                    </Grid>
-                </ListView.Footer>
-            </ListView>
-            
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                    <ListView.Footer>
+                        <Grid Padding="5" IsVisible="{Binding IsBusy}">
+                            <!-- Footer HeightRequest must be 0 when not visible -->
+                            <Grid.Triggers>
+                                <Trigger TargetType="Grid" Property="IsVisible" Value="False">
+                                    <Setter Property="HeightRequest" Value="0" />
+                                </Trigger>
+                            </Grid.Triggers>
+                            <ActivityIndicator IsRunning="{Binding IsBusy}"
+                                           HorizontalOptions="Center"
+                                           VerticalOptions="End"
+                                           Color="Green"/>
+                        </Grid>
+                    </ListView.Footer>
+                </ListView>
+            </ScrollView>
         </Grid>
         
     </ContentPage.Content>

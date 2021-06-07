@@ -17,7 +17,7 @@
           "Xamarin.Essentials": "1.6.1",
           "Xamarin.Forms": "5.0.0.2012",
           "Xamarin.Forms.Extended.InfiniteScrolling": "1.0.0-preview2",
-          "Xamarin.Forms.PancakeView": "2.3.0.759"
+          "Xamarin.Forms.PancakeView": "2.3.0.763-beta"
         },
         "runtime": {
           "EventVBM.dll": {}
@@ -175,7 +175,7 @@
           }
         }
       },
-      "Xamarin.Forms.PancakeView/2.3.0.759": {
+      "Xamarin.Forms.PancakeView/2.3.0.763-beta": {
         "dependencies": {
           "System.ComponentModel": "4.3.0",
           "Xamarin.Forms": "5.0.0.2012"
@@ -321,12 +321,12 @@
       "path": "xamarin.forms.extended.infinitescrolling/1.0.0-preview2",
       "hashPath": "xamarin.forms.extended.infinitescrolling.1.0.0-preview2.nupkg.sha512"
     },
-    "Xamarin.Forms.PancakeView/2.3.0.759": {
+    "Xamarin.Forms.PancakeView/2.3.0.763-beta": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-TGVsLJuGd/PKlyhmcBxZnHhHqyhYppzyrdb2q/sy+S6dQYkeGM8A+HmIIHVhbi7r8Sjasa/HRBkOmTSYQOZzhQ==",
-      "path": "xamarin.forms.pancakeview/2.3.0.759",
-      "hashPath": "xamarin.forms.pancakeview.2.3.0.759.nupkg.sha512"
+      "sha512": "sha512-GghetVBkMzzb6L1Ul3SH9JnHIvdmhgjRacAQaD5IUGMr2yxFtSeB0lRYTT0QjNJFK6TSgyh/lDwqMSaCMBjbMg==",
+      "path": "xamarin.forms.pancakeview/2.3.0.763-beta",
+      "hashPath": "xamarin.forms.pancakeview.2.3.0.763-beta.nupkg.sha512"
     }
   }
 }

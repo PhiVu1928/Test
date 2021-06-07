@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "yrhsgkYmequwEpSXA7NUvXDugcgZInMMOH2Ts96ZqFifAumy899pFLFA7fcvUdo8Vf6rCOfK95XjJGDpMI6cRA==",
+  "dgSpecHash": "Mq2wTw6/I1R6km8iCf2yhIWeVsScaxEUhTD/U4J1WuAi4MWv6aAUAb6jsrs1Kqiu2l/VaDTGySmz5+OORlIA0A==",
   "success": true,
   "projectFilePath": "C:\\Users\\Phi Vu\\Desktop\\VBM\\EventVBM\\EventVBM\\EventVBM\\EventVBM.csproj",
   "expectedPackageFiles": [
@@ -22,7 +22,7 @@
     "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\xamarin.essentials\\1.6.1\\xamarin.essentials.1.6.1.nupkg.sha512",
     "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\xamarin.forms\\5.0.0.2012\\xamarin.forms.5.0.0.2012.nupkg.sha512",
     "C:\\Users\\Phi Vu\\.nuget\\packages\\xamarin.forms.extended.infinitescrolling\\1.0.0-preview2\\xamarin.forms.extended.infinitescrolling.1.0.0-preview2.nupkg.sha512",
-    "C:\\Users\\Phi Vu\\.nuget\\packages\\xamarin.forms.pancakeview\\2.3.0.759\\xamarin.forms.pancakeview.2.3.0.759.nupkg.sha512"
+    "C:\\Users\\Phi Vu\\.nuget\\packages\\xamarin.forms.pancakeview\\2.3.0.763-beta\\xamarin.forms.pancakeview.2.3.0.763-beta.nupkg.sha512"
   ],
   "logs": []
 }

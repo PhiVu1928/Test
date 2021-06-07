@@ -12,6 +12,7 @@ using Rg.Plugins.Popup.Extensions;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using System.Diagnostics;
 
 namespace EventVBM.Views
 {
@@ -21,8 +22,20 @@ namespace EventVBM.Views
         public int pagesize;
         public MenuPage()
         {
-            InitializeComponent();            
-        }
+            InitializeComponent();
+            ScrolltoBottom.Clicked += async (sender, args) =>
+            {
+                try
+                {
+                    await scrollView.ScrollToAsync(Collectitems, ScrollToPosition.End , true);
+                    await Navigation.PopAsync();
+                }
+                catch (Exception ex)
+                {
+                    Debug.WriteLine(ex);
+                }
+            };
+         }
 
         protected override void OnAppearing()
         {
